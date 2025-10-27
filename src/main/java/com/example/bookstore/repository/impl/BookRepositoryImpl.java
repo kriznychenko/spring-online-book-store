@@ -2,7 +2,6 @@ package com.example.bookstore.repository.impl;
 
 import com.example.bookstore.model.Book;
 import com.example.bookstore.repository.BookRepository;
-import jakarta.persistence.criteria.CriteriaQuery;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
