@@ -1,5 +1,6 @@
 package com.example.bookstore.repository.impl;
 
+import com.example.bookstore.exception.DataProcessingException;
 import com.example.bookstore.model.Book;
 import com.example.bookstore.repository.BookRepository;
 import java.util.List;
@@ -32,7 +33,7 @@ public class BookRepositoryImpl implements BookRepository {
             if (transaction != null) {
                 transaction.rollback();
             }
-            throw new RuntimeException("Can't save book into db: " + book, e);
+            throw new DataProcessingException("Can't save book into db: " + book);
         } finally {
             if (session != null) {
                 session.close();
@@ -45,7 +46,7 @@ public class BookRepositoryImpl implements BookRepository {
         try (Session session = sessionFactory.openSession()) {
             return session.createQuery("FROM Book ", Book.class).list();
         } catch (Exception e) {
-            throw new RuntimeException("Can't get all books from db", e);
+            throw new DataProcessingException("Can't get all books from db");
         }
     }
 }
