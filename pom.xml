@@ -70,7 +70,7 @@
 		<dependency>
 			<groupId>org.liquibase</groupId>
 			<artifactId>liquibase-core</artifactId>
-			<version>4.31.1</version>
+			<version>${liquibase.version}</version>
 		</dependency>
 	</dependencies>
 
@@ -83,7 +83,7 @@
 			<plugin>
 				<groupId>org.liquibase</groupId>
 				<artifactId>liquibase-maven-plugin</artifactId>
-				<version>4.31.1</version>
+				<version>${liquibase.version}</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
